@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h3 class="mb-4">🛠 Admin Dashboard</h3>
+
+    <!-- ✅ System Overview Cards -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card border-info">
+                <div class="card-body text-center">
+                    <h5 class="card-title">📚 Total Books</h5>
+                    <p class="card-text display-6">{{ counts.total_books }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-success">
+                <div class="card-body text-center">
+                    <h5 class="card-title">👥 Members</h5>
+                    <p class="card-text display-6">{{ counts.total_members }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-primary">
+                <div class="card-body text-center">
+                    <h5 class="card-title">📖 Librarians</h5>
+                    <p class="card-text display-6">{{ counts.total_librarians }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-warning">
+                <div class="card-body text-center">
+                    <h5 class="card-title">🏢 Branches</h5>
+                    <p class="card-text display-6">{{ counts.total_branches }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Admin Tools -->
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('admin.view_all_data') }}" class="btn btn-outline-dark w-100">
+                📊 View All Data
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('admin.manage_entities') }}" class="btn btn-outline-dark w-100">
+                🧩 Manage Entities
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('admin.manage_archived') }}" class="btn btn-outline-dark w-100">
+                🗃 View Archived
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('admin.add_branch') }}" class="btn btn-outline-dark w-100">
+                🏢 Add Branch
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('admin.add_user', role='admin') }}" class="btn btn-outline-dark w-100">
+                👑 Add Admin
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('admin.add_user', role='librarian') }}" class="btn btn-outline-dark w-100">
+                📖 Add Librarian
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('admin.add_user', role='member') }}" class="btn btn-outline-dark w-100">
+                👤 Add Member
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('admin.broadcast_message') }}" class="btn btn-outline-dark w-100">
+                📢 Broadcast Message
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('admin.usage_analytics') }}" class="btn btn-outline-dark w-100">
+                📈 Usage Analytics
+            </a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a href="{{ url_for('admin.system_audit_log') }}" class="btn btn-outline-dark w-100">
+                📝 System Audit Log
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

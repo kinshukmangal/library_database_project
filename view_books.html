@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+  <h2>📚 Librarian Book Inventory</h2>
+  <table class="table table-bordered table-striped mt-3">
+    <thead class="table-dark">
+      <tr>
+        <th>Book ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Book Type</th>
+        <th>Total Copies</th>
+        <th>Available Copies</th>
+        <th>Branch ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+      <tr>
+        <td>{{ book[0] }}</td>
+        <td>{{ book[1] }}</td>
+        <td>{{ book[2] }}</td>
+        <td>{{ book[3] }}</td>
+        <td>{{ book[4] }}</td>
+        <td>{{ book[5] }}</td>
+        <td>{{ book[6] }}</td>
+        <td>{{ book[7] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/librarian" class="btn btn-secondary mt-3">⬅ Back to Dashboard</a>
+</div>
+{% endblock %}
